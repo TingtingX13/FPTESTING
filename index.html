@@ -47,6 +47,11 @@
         camera.attachControl(canvas, true);
         const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
+        // enable WebXR
+        const xr = await scene.createDefaultXRExperienceAsync({
+        floorMeshes: [env.ground]
+         });
+
         return scene;
       };
 
